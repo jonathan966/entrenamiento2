@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Clasificación de Imágenes</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .appbar {
+            background-color: #008000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #006400;
+        }
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+            border: 2px solid #008000;
+            border-radius: 5px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        p.status {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        p.confidence {
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+    <div class="appbar">
+        
+    </div>
+
+    <h1>Resultado de Clasificación de Imágenes</h1>
+    <img src="{{ image_path }}" alt="Imagen subida">
+    <p class="status">Enfermedad: {{ class_name }}</p>
+<p class="confidence">Confidence Score: {{ confidence_score }}</p>
+
+{% if disease_name != "Información no disponible." %}
+    <h2>Información de la Enfermedad</h2>
+    <p>{{ disease_info }}</p>
+{% else %}
+    <p>No hay información disponible para esta enfermedad.</p>
+{% endif %}
+
+</body>
+</html>

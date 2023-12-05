@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Imágenes</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .appbar {
+            background-color: #008000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #006400;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #008000;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008000;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #006400;
+        }
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="appbar">
+       
+    </div>
+    <h1>Clasificador de Imágenes</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png, .gif" required>
+        <button type="submit">Detectar</button>
+    </form>
+</body>
+</html>
