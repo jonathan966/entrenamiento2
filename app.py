@@ -51,7 +51,7 @@ def preprocess_image(image_path):
     data[0] = normalized_image_array
     return data
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/index", methods=["GET", "POST"])
 def main():
     if request.method == "POST":
         # Check if the post request has the file part
